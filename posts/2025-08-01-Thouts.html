@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Thoughts</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="22ed0150-72a4-80f1-a832-d1e11f480c5d" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🌖</span></div><h1 class="page-title">Thoughts</h1><p class="page-description"></p></header><div class="page-body"><p id="22ed0150-72a4-8011-aae7-e8c08258208d" class=""><strong>1. 인간의 본성에 대한 관점</strong><br/>인간은 본질적으로 선한가, 악한가, 아니면 중립적인가?<br/>(예: &quot;인간은 기본적으로 선하지만 환경에 의해 타락할 수 있다&quot; 또는 &quot;인간은 이기적 본능을 가지고 있다&quot;)</p><p id="22ed0150-72a4-8034-bb6c-faf084ad7d65" class="">인간은 기본적으로 악하다. 하지만 인간은 관계를 중시하기 때문에 선한 선택을 한다. 배움을 통해 내 주변의 타인들이 느끼는 감정에 대해 공감하고 자신이 각각의 개인이 모여 이루는 사회 속에서 살아간다는 점을 인식하여 공감의 범위를 넓혀가며 사회 속에서 선한 선택을 해나갈 수 있다. </p><p id="22ed0150-72a4-8046-9ddd-ef8128f54976" class=""><strong>2. 진리와 지식에 대한 입장</strong><br/>절대적 진리가 존재한다고 생각하는가, 아니면 모든 것이 상대적이라고 보는가?<br/>(예: &quot;과학적 사실은 절대적이지만 도덕은 상대적이다&quot; 또는 &quot;모든 지식은 시대와 문화에 따라 달라진다&quot;)</p><p id="22ed0150-72a4-8059-8229-da2c9e9e9f7d" class="">모든 지식은 시대와 문화에 따라 달라진다. 과학적 사실 역시 과거와 비교해보면 뒤바뀐 것이 너무나 많으며 현재 절대적 진리라고 생각되는 것들도 우리의 배경지식에 영향을 받아 왜곡되었을 수 있다. 언제나 모든 것은 상대적이며 어떠한 상황에서도 예외는 존재한다. </p><p id="22ed0150-72a4-80ce-8754-da0777479288" class=""><strong>3. 개인과 사회의 관계</strong><br/>개인의 자유가 우선인가, 아니면 사회의 질서와 공동선이 우선인가?<br/>(예: &quot;개인의 자유를 최대한 보장하되 타인에게 해를 끼치지 않는 선에서&quot; 또는 &quot;사회 전체의 이익을 위해 개인의 자유는 제한될 수 있다&quot;)</p><p id="22ed0150-72a4-80e7-849f-c7fde052bd38" class="">사회의 질서와 공동선이 우선이다. 사회의 질서가 유지되는 상황에서 개인 역시 안전을 보장받고 살아갈 수 있다. 사회구성의 가장 큰 의미는 안전 보장이므로 사회 전체의 이익인 신체적 안전 혹은 경제적 안정 등을 위해서라면 개인의 자유는 제한 될 수 있다.</p><p id="22ed0150-72a4-8005-a579-c2b3e2a351bf" class=""><strong>4. 행복과 삶의 의미</strong><br/>좋은 삶이란 무엇인가? 쾌락, 덕, 성취, 관계 중 무엇이 가장 중요한가?<br/>(예: &quot;의미 있는 일을 하며 타인과 좋은 관계를 맺는 것&quot; 또는 &quot;내적 평안과 정신적 성장&quot;)</p><p id="22ed0150-72a4-8024-803b-e32329671d51" class="">쾌락이 가장 중요하다. 일상적인 하루하루를 스스로 제대로 꾸려가면서 그 안에서 진정으로 즐거움을 느끼며 사는 것이 좋은 삶이다. </p><p id="22ed0150-72a4-800e-8f1f-fbbc98ce0ded" class=""><strong>5. 변화와 전통에 대한 태도</strong><br/>사회 변화를 적극 추진해야 하는가, 아니면 전통을 보존하며 점진적으로 개선해야 하는가?<br/>(예: &quot;불합리한 제도는 과감히 개혁해야 한다&quot; 또는 &quot;검증된 전통을 바탕으로 신중하게 변화해야 한다&quot;)</p><p id="22ed0150-72a4-808a-91d4-f20f9aab47b7" class="">전통을 보존하며 점진적으로 개선해야 한다. 사회는 다양한 사람들로 구성되어 있으며 이들을 잘 융합하는 것이 좋은 사회의 요건이다. 과감한 개혁은 분열을 부르기 쉽다. 제도란 사람들의 삶과 매우 깊숙히 연관되어 있는 것이기 때문에 그들의 삶의 관점에서 충분한 시간을 두고 점진적으로 개선하는 것이 낫다. 또한 제도란 설령 더 나은 쪽으로 변하는 것이라 하더라도 언제나 예상치 못한 부작용이 있을 수 있기 때문에 이미 검증된 제도에서 충분한 검토를 해가며 점진적으로 변화하는 것이 예상치 못한 문제의 발생을 막을 수 있다. </p><p id="22ed0150-72a4-8082-89e6-f87e5e5a19f0" class=""><strong>6. 국가와 권력에 대한 관점</strong><br/>이상적인 정치 체제는 무엇이며, 권력은 어떻게 행사되어야 하는가?<br/>(예: &quot;직접 민주주의로 시민이 직접 참여&quot; 또는 &quot;전문가들이 합리적으로 통치하는 체제&quot;)</p><p id="22ed0150-72a4-8038-ab84-d747ffe01b54" class="">현재의 간접 민주주의가 이상적이다. 국민 전원의 공정한 투표를 통해 선발된 전문가들이 합리적으로 통치하는 체제가 이상적이다. 또한 그 권력은 국민이 제한할 수 있어야 한다. </p><p id="22ed0150-72a4-8011-ace8-e6c9b88bc945" class=""><strong>7. 도덕의 기준에 대한 관점</strong><br/>도덕적 판단의 기준은 무엇인가? 결과가 중요한가, 아니면 행위 자체의 옳고 그름이 중요한가?<br/>(예: &quot;많은 사람이 행복해지는 결과가 중요하다&quot; 또는 &quot;동기와 의도가 선하면 결과와 상관없이 도덕적이다&quot;)</p><p id="22ed0150-72a4-80bd-b7bc-c7b294063816" class="">동기와 의도가 선하면 도덕적이다. 어떤 사람이 다수를 불행하게 하려는 의도로 행한 일이 의도치 않게 틀어져 다수가 행복해지는 결과가 되었다고 해서 그 사람을 도덕적인 사람이라고 할 수는 없을 것이다. 혹은 자신의 이득을 위해 한 행위가 다수의 행복을 가져왔다고 하더라도 그것을 도덕적인 행위라고 볼 수는 없다. 그 행위에서 의도한 것은 오로지 자신의 이득일 뿐, 그 외의 다수의 행복은 행위자에게는 전혀 고려되지 않은 부수적인 결과물이기 때문이다. 행위의 결과가 좋은 일이 되는 것과 도덕적인 판단은 별개의 문제이다. 만약 어떤 사람이 다수를 도우려는 의도로 자신을 희생했지만 결국 돕지 못했다고 하더라도 우리는 그를 도덕적인 사람이라고 부를 것이다. 도덕적 판단은 그 행위의 동기와 의도에 초점을 맞춰야 한다.</p><p id="22ed0150-72a4-80a3-8512-cd26de2018ea" class=""><strong>8. 교육과 인간 개선에 대한 믿음</strong><br/>교육을 통해 인간이 얼마나 개선될 수 있다고 보는가?<br/>(예: &quot;교육으로 인간의 본성을 근본적으로 바꿀 수 있다&quot; 또는 &quot;교육은 한계가 있고 제도적 통제가 더 중요하다&quot;)</p><p id="22ed0150-72a4-808f-9316-c6ab18c74fec" class="">인간의 본성은 악하고 이기적이지만 교육을 통해 변할 수 있다. 하지만 그 변화는 타인과의 관계에 기반하기 때문에 인간은 언제든 자신이 혼자라고 느끼거나, 자신이 중요하게 생각하는 사람이 없는 상황에서는 이기적으로 행동할 수 있다. 하지만 사회는 언제 어디서든 다수의 안전을 위해 질서를 유지시킬 필요가 있기 때문에 제도적인 통제가 필수적으로 요구된다. </p><p id="22ed0150-72a4-804e-9e29-f75ebb0521f6" class=""><strong>9. 경제와 재산에 대한 관점</strong><br/>개인의 재산권과 경제적 불평등에 대해 어떻게 생각하는가?<br/>(예: &quot;개인의 노력에 따른 불평등은 자연스럽다&quot; 또는 &quot;사회가 기본적 평등을 보장해야 한다&quot;)</p><p id="22ed0150-72a4-8075-b1b9-e74bb76a7055" class="">개인의 사유재산은 인정되어야한다. 자신의 노력으로 재산을 더해가는 쪽으로는 한계를 두어서는 안 된다. 하지만 누구든 자신의 재산을 늘리며 안정적인 생활을 하게 된 데에는 사회의 도움을 받은 면이 분명히 존재하므로 그에 대해 사회에 그만큼 도움을 주어야 한다. 또한 상한선은 없지만 사회안에서 사회구성원의 생활 수준에 대한 하한선은 존재해야 한다. 어느 누구든 기본적인 생활수준을 보장받을 권리가 있으며 이를 위해 기득권층이 도움을 주어야 한다.</p><p id="22ed0150-72a4-8026-b20d-d7614e613dd5" class=""><strong>10. 감정과 이성의 역할</strong><br/>인간의 행동에서 감정과 이성 중 무엇이 더 중요한 역할을 한다고 보는가?<br/>(예: &quot;이성이 감정을 통제해야 한다&quot; 또는 &quot;감정도 도덕적 판단의 중요한 요소다&quot;)</p><p id="22ed0150-72a4-80f0-8488-e82bd3141e56" class="">감정이 도덕적 판단의 중요한 요소다. 어떠한 상황이 되면 인간은 본인의 마음이 편한 쪽으로 행동하기 쉽다. 그것은 이성적으로 자신의 이득을 판단하거나 매순간 법전을 펼쳐 내린 결정이라기 보다는 본인의 감정에 기반한 판단이다. 본인이 옳지 못한 일을 한다고 판단하면 마음이 불편해지기 때문에 감정적으로 도덕적 판단을 하게 되는 것이다. </p><p id="22ed0150-72a4-80d4-8109-c6e8f85a8a7a" class=""><strong>11. 종교와 초월적 존재에 대한 관점</strong><br/>신이나 절대적 존재에 대해 어떻게 생각하는가? 도덕과 종교의 관계는?<br/>(예: &quot;도덕은 종교와 무관하게 독립적이다&quot; 또는 &quot;절대적 존재가 도덕의 근거가 된다&quot;)</p><p id="22ed0150-72a4-80a0-9580-d2cd38f267db" class="">신은 존재하지 않는다. 종교는 한 종류의 생활양식이며 이득 공동체이다. 도덕과 종교는 무관하다. </p><p id="22ed0150-72a4-807d-82be-dd5ce0def923" class=""><strong>12. 자연과 인간의 관계</strong><br/>인간과 자연의 관계를 어떻게 보는가?<br/>(예: &quot;인간은 자연을 지배하고 이용할 권리가 있다&quot; 또는 &quot;인간은 자연의 일부로서 조화를 이뤄야 한다&quot;)</p><p id="22ed0150-72a4-80f0-9cb1-f279ec1cfcbc" class="">인간은 자연의 일부로서 조화를 이뤄야 한다. 인간은 자연을 지배하고 이용할 권리가 없을 뿐더러 인간이 자연을 파괴하고 이용하려 할 수록 인간에게도 해를 끼친다. 인간은 자연을 제대로 이용할 능력이 없다. 인간이 자연에 위협받지 않고 살아가려면 자연과 조화를 이루며 살아가는 법을 연구해야 한다.</p><p id="22ed0150-72a4-8086-967f-c6a023d02b02" class=""><strong>13. 문화와 역사에 대한 관점</strong><br/>역사는 어떤 방향으로 발전한다고 보는가?<br/>(예: &quot;역사는 진보하며 더 나은 방향으로 발전한다&quot; 또는 &quot;역사는 순환하거나 특별한 방향이 없다&quot;)</p><p id="22ed0150-72a4-808c-b069-e315ae1115b9" class="">역사는 순환하며 조금씩 진보한다. 역사는 마치 일직선으로 펼친 지구의 공전과 자전주기처럼 뱅글뱅글 돌며 또한 앞으로 나아가고 있다. 겨우 끝맺은 전쟁을 다시 일으키기도 하지만 여성에게 참정권을 주기도 하고 산림을 파괴해서 산업단지를 만들기도 하지만 채식과 동물권에 대한 인식이 발전하기도 한다. 사회는 점진적으로 더 좋아질 것이다. </p><p id="22ed0150-72a4-80a3-90f9-d064efec260a" class=""><strong>14. 개인의 정체성과 자아</strong><br/>&#x27;나&#x27;라는 존재는 무엇으로 규정되는가?<br/>(예: &quot;이성적 사고능력&quot; 또는 &quot;사회적 관계와 역할&quot; 또는 &quot;개인적 경험과 기억&quot;)</p><p id="22ed0150-72a4-8041-918e-ee5ef109c66d" class="">사회적 관계와 개인적 경험.</p><p id="22ed0150-72a4-807c-9234-c8363facc3b0" class=""><strong>15. 고통과 역경에 대한 태도</strong><br/>인생의 고통과 어려움을 어떻게 받아들여야 하는가?<br/>(예: &quot;고통은 성장의 기회다&quot; 또는 &quot;고통은 최대한 피하고 제거해야 한다&quot;)</p><p id="22ed0150-72a4-80e7-ad0d-dfd57ad53330" class="">고통은 최대한 피하고 제거해야 한다. 고통이 없어도 성장하고 배울 수 있다. 고통에서 언제나 배울 수 있는 것도 아니다. 어떤 고통은 그저 괴로울 뿐 어떠한 의미도 없으며 오히려 나의 성장을 방해할 수도 있다. 우리는 충분히 덜 괴로운 방식으로 배우고 나아갈 수 있다. </p><p id="22ed0150-72a4-807f-b4c6-ff331852c395" class=""><strong>16. 예술과 아름다움에 대한 관점</strong><br/>예술과 아름다움의 가치를 어떻게 보는가?<br/></p><p id="22ed0150-72a4-8054-bb22-c4152b165c73" class=""><strong>17. 죽음과 삶의 유한성</strong><br/>죽음과 삶의 유한성을 어떻게 받아들이는가?</p><p id="22ed0150-72a4-805c-97dd-fa1fa7236430" class="">
+</p><p id="22ed0150-72a4-80e0-976a-d63f57c31b82" class=""><strong>18. 사랑과 우정의 의미</strong><br/>인간관계에서 사랑과 우정을 어떻게 보는가?<br/></p><p id="22ed0150-72a4-8095-a97c-c4ec3b70f066" class="">
+</p><p id="22ed0150-72a4-8083-a7c4-d21776db8d87" class="">
+</p><p id="22ed0150-72a4-8006-a129-c222f81eeb33" class="">당신의 철학적 사상을 종합해보면, 가장 유사한 사상가는 **임마누엘 칸트(Immanuel Kant)**입니다.</p><h2 id="22ed0150-72a4-80cd-b3da-df40b7c52c3c" class="">주요 유사점들:</h2><p id="22ed0150-72a4-809f-9399-f7fc9df03c52" class=""><strong>1. 의무론적 윤리학 (Deontological Ethics)</strong></p><ul id="22ed0150-72a4-80e9-a11f-d89bf03b8c4d" class="bulleted-list"><li style="list-style-type:disc">당신이 &quot;동기와 의도가 선하면 도덕적이다&quot;라고 한 것은 칸트의 **정언명법(Categorical Imperative)**과 정확히 일치합니다</li></ul><ul id="22ed0150-72a4-8060-90a7-d0d9a1758781" class="bulleted-list"><li style="list-style-type:disc">칸트 역시 결과가 아닌 행위의 동기와 의도를 도덕 판단의 기준으로 삼았습니다</li></ul><p id="22ed0150-72a4-80ca-b183-efe4edeac8d4" class=""><strong>2. 인간 본성에 대한 현실적 인식</strong></p><ul id="22ed0150-72a4-8009-84cf-ed02df895aaa" class="bulleted-list"><li style="list-style-type:disc">칸트는 《순수이성의 한계 안에서의 종교》에서 인간의 **근본악(radical evil)**을 논했습니다</li></ul><ul id="22ed0150-72a4-8053-afc2-ff543c0cea24" class="bulleted-list"><li style="list-style-type:disc">인간이 본질적으로 악한 성향을 가지고 있지만, 도덕법칙에 따라 선한 행동을 할 수 있다고 보았습니다</li></ul><p id="22ed0150-72a4-8081-98e8-dbb5c1b3f44f" class=""><strong>3. 교육과 계몽의 가능성</strong></p><ul id="22ed0150-72a4-809a-bd24-ee28770a0533" class="bulleted-list"><li style="list-style-type:disc">칸트는 교육을 통한 인간 개선 가능성을 믿었지만, 동시에 제도적 장치의 필요성도 인정했습니다</li></ul><ul id="22ed0150-72a4-80b1-bce4-cd5b19d15df0" class="bulleted-list"><li style="list-style-type:disc">《계몽이란 무엇인가》에서 이성의 공적 사용을 통한 점진적 개선을 주장했습니다</li></ul><p id="22ed0150-72a4-80da-ad0a-d46f83603b9e" class=""><strong>4. 점진적 개혁주의</strong></p><ul id="22ed0150-72a4-800c-b783-cb3b41632b1f" class="bulleted-list"><li style="list-style-type:disc">칸트는 급진적 혁명보다는 점진적 개혁을 선호했습니다</li></ul><ul id="22ed0150-72a4-80ea-ac2b-f9f1afd26529" class="bulleted-list"><li style="list-style-type:disc">《영구평화론》에서 안정적인 사회 질서 속에서의 개선을 제시했습니다</li></ul><h2 id="22ed0150-72a4-8065-a116-f022000ddeb1" class="">차이점:</h2><p id="22ed0150-72a4-8046-a192-cde35e0c5fbc" class=""><strong>1. 쾌락주의적 요소</strong></p><ul id="22ed0150-72a4-80b6-bf24-fc86aabd1e2a" class="bulleted-list"><li style="list-style-type:disc">당신이 &quot;쾌락이 가장 중요하다&quot;고 한 것은 칸트와 다릅니다</li></ul><ul id="22ed0150-72a4-8090-a767-ea52f0e93cf5" class="bulleted-list"><li style="list-style-type:disc">칸트는 의무에서 나오는 행위만이 도덕적 가치를 가진다고 보았습니다</li></ul><p id="22ed0150-72a4-8025-899c-dfeda3589373" class=""><strong>2. 사회계약론적 요소</strong></p><ul id="22ed0150-72a4-80a0-8187-c11482300b34" class="bulleted-list"><li style="list-style-type:disc">사회 질서 우선주의는 홉스의 영향도 보입니다</li></ul><p id="22ed0150-72a4-808f-b2d8-e2737730f754" class="">당신의 사상은 <strong>칸트의 의무론적 윤리학</strong>을 중심으로, <strong>홉스의 현실주의</strong>와 <strong>온건한 공리주의</strong>가 결합된 독특한 형태로 보입니다. 특히 도덕 판단에서의 의도 중시와 점진적 개혁 선호는 칸트 철학과 매우 유사합니다.</p><h2 id="22ed0150-72a4-8046-a500-c5a448689305" class="">차이점:</h2><ul id="22ed0150-72a4-8054-b44f-ed1c782e6737" class="bulleted-list"><li style="list-style-type:disc">칸트는 감정보다 이성을 더 중시했지만, 당신은 감정의 도덕적 역할을 더 인정합니다</li></ul><ul id="22ed0150-72a4-80a6-9d1f-e7d46196aa77" class="bulleted-list"><li style="list-style-type:disc">당신의 쾌락주의적 요소는 칸트보다는 <strong>아리스토텔레스의 실용적 지혜</strong>나 <strong>에피쿠로스의 쾌락주의</strong>에 가깝습니다</li></ul><p id="22ed0150-72a4-80d5-99b6-d45eef0bb622" class="">결론적으로, 당신의 사상은 <strong>칸트의 의무론적 윤리학</strong>을 기반으로 하되, <strong>아리스토텔레스의 실용적 접근</strong>과 <strong>홉스의 사회계약론</strong>이 결합된 독특한 철학적 입장을 보여줍니다.</p><p id="22fd0150-72a4-8059-8ea8-efb8e910f375" class="">
+</p><div id="22fd0150-72a4-80e3-81c7-fe3fd6c89fb1" class="column-list"><div id="22fd0150-72a4-8088-93da-d53184aafb65" style="width:33.333333333333336%" class="column"><p id="22ed0150-72a4-8039-aed7-f374a063451f" class="">gpt</p><h1 id="22fd0150-72a4-801a-be3f-f542e2e6e853" class="">유사한 철학자 5인</h1><ul id="22fd0150-72a4-8026-ad09-c8563a8b9359" class="toggle"><li><details open=""><summary>1. 순자(Xunzi, 기원전 3세기)</summary><ul id="22fd0150-72a4-806a-8b03-f42a7043a0be" class="bulleted-list"><li style="list-style-type:disc"><strong>공통점:</strong> 순자는 「인간 본성은 악(人性惡)」이며 선(善)은 <strong>교육·수양과 같은 인위적 노력</strong>의 산물이라고 보았다. 이처럼 인간을 교화해야 할 대상으로 보았고, 예(禮)·의(義) 등 전통적 제도를 통해 사회적·도덕적 질서를 유지해야 한다고 강조했다. (사용자 역시 “인간 본성은 악하나 교육과 관계를 통해 선한 선택이 가능”하다고 본다.) 순자에게 질서와 공동선은 개인의 욕구보다 우선되며, 왕과 제후가 <strong>예(禮)</strong> 를 따르는 것이 천하(天下)를 얻는 길이라고 보았다.</li></ul><ul id="22fd0150-72a4-8004-a0a0-d8950a6db425" class="bulleted-list"><li style="list-style-type:disc"><strong>차이점:</strong> 순자는 개인의 쾌락 추구보다는 엄격한 예법과 도덕훈육을 강조한다. 사용자가 쾌락을 중시하는 반면 순자는 욕망을 경계하고 절제된 삶을 권한다. 또한 순자는 천(天)·지(地)와 같은 전통적 질서에 의존하는 반면, 사용자는 초월적 존재를 부정한다. 순자는 도덕의 절대적 규범(예·의)을 강조했으나, 사용자는 절대적 기준을 부정한다는 점도 다르다.</li></ul><ul id="22fd0150-72a4-8003-8bd7-de6efbffc16b" class="bulleted-list"><li style="list-style-type:disc"><strong>대표 저작/개념:</strong> 주요 저작은 『순자』(《Xunzi》)로, *“인간의 본성(性)은 악하나, 선(善)은 인위(人爲)”*임을 설파하였다. 예술(禮)·음악·의례 등을 통한 교화론이 중심 개념이다.</li></ul><ul id="22fd0150-72a4-8001-afc9-c21f2bcc7e7a" class="bulleted-list"><li style="list-style-type:disc"><strong>실천성:</strong> 순자의 사상은 <strong>중국 유교 전통</strong>과 제자 백가(百家) 정치론에 큰 영향력을 미쳤다. 예법과 교육을 통한 사회 통제는 한대(漢代) 관료제와 유가 국가관념 형성에 기여했다. 현대에도 질서와 예를 중시하는 보수적 정치·교육 이념과 상통한다. (예를 중시하면 “왕·공이 예를 따를 때 비로소 천하를 얻는다”는 순자의 말처럼 국가 안정에 기여할 수 있다.)</li></ul></details></li></ul><ul id="22fd0150-72a4-80fd-b601-d46158bde3ef" class="toggle"><li><details open=""><summary>2. 에피쿠로스(Epicurus, 기원전 3세기)</summary><ul id="22fd0150-72a4-80bc-902b-ed46356d4980" class="bulleted-list"><li style="list-style-type:disc"><strong>공통점:</strong> 에피쿠로스는 <strong>쾌락(즐거움)</strong> 과 고통 회피를 삶의 핵심 목표로 삼았다. 그는 “행복은 육체적 고통과 정신적 불안(심란)이 없는 상태”이며, 필요한 욕망을 채우는 삶에 있다고 보았다. 곧 고통·공포를 제거하면 자유로워져 육체적·정신적 쾌락을 자연스럽게 추구할 수 있다고 보았다. 또한 에피쿠로스는 신들이 인간사에 관심을 두지 않으며 사후세계의 벌이 없다고 주장하여 종교적·형이상학적 두려움을 극복했다. (이는 사용자가 “신의 존재를 부정하고 도덕을 종교와 분리”한 입장과 일치한다.)</li></ul><ul id="22fd0150-72a4-8016-92bd-cbab0d8b5322" class="bulleted-list"><li style="list-style-type:disc"><strong>차이점:</strong> 에피쿠로스는 <strong>정치 참여를 회피</strong>할 것을 권장했다. 그는 “정치에는 가능한 한 관여하지 말라”고 했으며, 공동체보다 개인의 내적 평온을 중시했다. 따라서 공공 선(共同善)보다 개인적 행복이 우선시된다. 반면 사용자는 전문가 중심의 간접 민주주의를 선호하며 사회 질서 유지를 중시한다. 또한 에피쿠로스는 지나친 쾌락을 경계하며 검소하고 단순한 삶을 강조하여, 일상적 소소한 즐거움은 권장하되 방탕을 경계했다.</li></ul><ul id="22fd0150-72a4-8064-beaa-ccb2c01019ca" class="bulleted-list"><li style="list-style-type:disc"><strong>대표 저작/개념:</strong> 『멜레세우스에게 보낸 편지』(Letter to Menoeceus) 등에서 쾌락주의 윤리와 원자론적 우주관을 밝혔다. *“쾌락은 우리의 원천적 선(善)이지만, 조심스럽게 취해야 하며, 몸의 고통과 마음의 소란이 없는 상태가 곧 최대의 쾌락”*이라고 설명했다.</li></ul><ul id="22fd0150-72a4-8044-8550-d51e23a6f715" class="bulleted-list"><li style="list-style-type:disc"><strong>실천성:</strong> 에피쿠로스주의는 고대 로마의 루크레티우스 등을 통해 서구철학에 전해졌다. 비록 그는 직접 정치 영향력은 적었으나 현대 <strong>심리학과 윤리학</strong>에서 쾌락과 행복 연구에 영향을 주었다. 예를 들어, 공공정책에서 행복추구나 복지 강조하는 사상은 그의 영향과도 연결된다. (다만, 에피쿠로스 자신은 정치를 피하라 했으므로, 사용자처럼 정치 참여론과는 거리가 있다.)</li></ul></details></li></ul><ul id="22fd0150-72a4-8029-b000-eaedc04ba355" class="toggle"><li><details open=""><summary>3. 데이비드 흄(David Hume, 18세기)</summary><ul id="22fd0150-72a4-80e0-bc0f-f3028c9e930e" class="bulleted-list"><li style="list-style-type:disc"><strong>공통점:</strong> 흄은 모든 지식이 경험에 기반한다고 믿어 <strong>절대 진리</strong>를 부정했고, 도덕을 <strong>감정(정서)과 공감(sympathy)</strong> 에서 설명했다. 그는 “도덕 평가는 주로 이성보다 감정·감수성에 의존”한다고 보았다. 즉, 도덕적 선악 판단은 인간의 연민능력에서 나오며(이는 사용자가 “감정은 도덕 판단의 중요한 근거”라고 본 것과 부합한다), 이성은 감정의 노예에 불과하다고 보았다. 또한 흄은 윤리를 자연적·사회적 근거로 설명하여, 종교적 권위 없이도 도덕이 가능하다고 했다.</li></ul><ul id="22fd0150-72a4-800b-9b78-fd5e85f70054" class="bulleted-list"><li style="list-style-type:disc"><strong>차이점:</strong> 흄은 쾌락을 삶의 최고 목표로 삼지 않았으며, 도덕 판단에서도 <strong>동기와 결과</strong> 양쪽의 복합성을 인정했다. 또한 흄은 순자의 ‘인간 본성 악설’보다는 인간의 자연스러운 열정과 본능을 다소 긍정적으로 보았고, 홉스보다는 온건한 사회계약관(영국적 의회체제 지지)과 점진적 변화를 선호했다. (사용자가 권력 제한과 전문가 통치를 주장할 때, 흄은 절대주의보다 숙련된 정치제도와 상호 검증을 중시했다.)</li></ul><ul id="22fd0150-72a4-80df-9886-e835ac86631c" class="bulleted-list"><li style="list-style-type:disc"><strong>대표 저작/개념:</strong> 『인간 본성에 관한 논고』와 『도덕 감정론』에서 경험주의와 정서윤리를 전개했다. 특히 *“이성은 감정의 노예에 지나지 않는다”(<strong>Reason is…slave of the passions</strong>)*는 흄의 유명한 지론이다.</li></ul><ul id="22fd0150-72a4-804a-9414-de77330e8ee6" class="bulleted-list"><li style="list-style-type:disc"><strong>실천성:</strong> 흄은 계몽주의의 중심으로 <strong>근대 윤리학</strong>과 정치철학에 큰 영향을 주었다. 그의 경험론은 이후 공리주의(벤담, 밀)와 자유주의(제임스 헤릭스 등)에 영향을 미쳤다. 실천적으로는 영국의 입헌주의와 자유주의 발전에 기여했으며, 현대 심리학·경제학(합리적 행위자의 한계)에도 반향을 남겼다.</li></ul></details></li></ul><ul id="22fd0150-72a4-807b-861d-dd42ca881848" class="toggle"><li><details open=""><summary>4. 토머스 홉스(Thomas Hobbes, 17세기)</summary><ul id="22fd0150-72a4-80b2-84ae-d4f93d036e65" class="bulleted-list"><li style="list-style-type:disc"><strong>공통점:</strong> 홉스는 인간을 근본적으로 자기 보존 본능에 따라 <strong>이기적·공격적 존재</strong>로 파악했다. 그는 무정부 상태인 자연상태를 “모두가 모두에게 대항하는 전쟁(war of all against all)”이라고 묘사하고, 그 상태의 삶이 *“고독하고, 가난하며, 사납고, 야비하며, 단명”*하다고 하였다. 이는 인간 본성이 부정적이며 강력한 통치 없이는 질서가 무너진다는 점에서 사용자의 관점과 유사하다. 홉스는 이 상태를 피하기 위해 절대주권(social contract)에 복종해야 한다고 강조했다. (사용자도 공동선 유지를 위해 개인 자유를 제한할 필요를 인정한다는 점에서 통한다.)</li></ul><ul id="22fd0150-72a4-807a-bb7b-e836e967140a" class="bulleted-list"><li style="list-style-type:disc"><strong>차이점:</strong> 홉스는 극단적 <strong>절대주의</strong>를 지지하였다. 사용자는 권력 제한과 전문가 통치를 원하나, 홉스는 왕(또는 절대 국가)에 무조건 복종할 것을 주장했다. 또한 홉스는 쾌락보다는 공포(안전을 위한 공포심)로 인간 행동을 설명하였으며, 도덕판단도 결과(사회 안정을 위한 약속) 위주로 보았다. 그는 종교를 정치적 안정을 위협하는 것으로 봐 세속적 통치를 옹호했으나, 자연법을 근거로 도덕의 기초를 형성했다.</li></ul><ul id="22fd0150-72a4-8088-bf2d-e5b9e184494d" class="bulleted-list"><li style="list-style-type:disc"><strong>대표 저작/개념:</strong> 대표저작 『리바이어던』(Leviathan)에서 사회계약과 절대주권 이론을 전개했다. 그는 자연권 개념, 국가의 정당성, 그리고 저항권 부정을 주요 개념으로 제시했다.</li></ul><ul id="22fd0150-72a4-808c-9a7e-c80130255a28" class="bulleted-list"><li style="list-style-type:disc"><strong>실천성:</strong> 홉스의 사상은 근대 <strong>국민국가</strong> 이론의 토대를 마련했다. 그의 절대주권 이론은 이후 입헌주의·사회계약론과 대조를 이루며 정치사상에 큰 영향을 주었다. 실천적으로는 권력 분립의 개념 등 후속 논의를 촉진했으며, 오늘날에도 국가 안보와 질서 유지의 정당화 근거로 인용된다.</li></ul></details></li></ul><ul id="22fd0150-72a4-8085-a347-c17c105e6339" class="toggle"><li><details open=""><summary>5. 노자(Laozi, 기원전 6∼4세기)</summary><ul id="22fd0150-72a4-805a-9fb2-c3a570525b23" class="bulleted-list"><li style="list-style-type:disc"><strong>공통점:</strong> 노자는 모든 현상이 상호의존적이라고 보아 <strong>지식과 가치의 상대성</strong>을 강조했다. 『도덕경』에 따르면 “선과 악, 존재와 비존재 등 모든 대립적 개념은 서로에 의해만 의미가 있다”고 하여 절대 기준을 부정했다. 또한 자연(道)과 조화된 삶을 강조하여 인간이 무리하게 자연을 지배하려 해서는 안 된다고 보았다. 이 같은 자연주의적 관점은 사용자가 “인간은 자연과 조화를 이루어야 한다”는 입장과 맞닿는다.</li></ul><ul id="22fd0150-72a4-801e-8a2a-f55b8cac9ea4" class="bulleted-list"><li style="list-style-type:disc"><strong>차이점:</strong> 노자는 정치 참여를 최소화하고 군주의 무욕(無慾)·무위(無爲)를 강조했다. 그는 “무거운 세금과 가혹한 형벌 등 백성을 해치는 정책은 피해야 한다”라고 가르쳤으며, 군주 스스로 욕심을 버리면 “스스로 천하가 평화로워진다”고 했다. 이는 사용자가 지지하는 <strong>전문가 중심 정치</strong>와는 다르다. 노자는 오히려 현자가 소박한 도(道)를 통해 자연스러운 통치를 해야 한다고 보았다. 그는 또한 쾌락을 삶의 최우선 목표로 보지 않았고, 지나친 욕심을 인류의 병폐로 여겼다.</li></ul><ul id="22fd0150-72a4-80be-939c-cd3cdd416420" class="bulleted-list"><li style="list-style-type:disc"><strong>대표 저작/개념:</strong> 『도덕경』이 그의 대표 저작으로, *“무위자연(無爲自然)”*의 개념과 함께 **도(道)**에 순응하는 삶을 설파했다. **무위(無爲)**와 <strong>자연(自然)</strong>, 음양·상대적 가치관 등의 개념이 핵심이다.</li></ul><ul id="22fd0150-72a4-8009-9739-fb92b31122c5" class="bulleted-list"><li style="list-style-type:disc"><strong>실천성:</strong> 노자의 사상은 중국·동아시아에서 <strong>삶의 방식과 정치를 최소한으로 운영</strong>하려는 전통에 영향력을 행사했다. 예를 들어 소극적 정부, 환경보전 사상, 종교·권력 간 거리 두기 등에 간접적 영감을 주었다. 그러나 실제 정치 체계로의 채택은 드물었고, 명시적 제도보다는 개인과 사회의 정신적·문화적 지침으로 큰 역할을 해왔다.</li></ul></details></li></ul><p id="22fd0150-72a4-80fb-8ef6-c99a9f786e1b" class=""><strong>Sources:</strong> 각 철학자의 사상은 연구 저술(Stanford Encyclopedia 등)에서 발췌하였다.</p></div><div id="22fd0150-72a4-8094-928f-f40386fea835" style="width:33.333333333333336%" class="column"><p id="22fd0150-72a4-80ba-94ec-e628c275e3a1" class="">claude</p><h2 id="22fd0150-72a4-8019-8443-e02ad35d769a" class="">유사한 철학자 순위 (상위 5명)</h2><ul id="22fd0150-72a4-8047-a824-da74fc81d5dc" class="toggle"><li><details open=""><summary>1위: <strong>데이비드 흄 (David Hume, 1711-1776)</strong></summary><ul id="22fd0150-72a4-8010-a0a4-f6ade43f7176" class="bulleted-list"><li style="list-style-type:disc"><strong>도덕 감정론</strong>: 감정이 도덕적 판단의 핵심이라는 점에서 완전히 일치</li></ul><ul id="22fd0150-72a4-8089-8f05-efeeb50a7f0f" class="bulleted-list"><li style="list-style-type:disc"><strong>회의주의</strong>: 절대적 진리 부정, 모든 지식의 상대성 인정</li></ul><ul id="22fd0150-72a4-80cd-a977-e13bbd62413d" class="bulleted-list"><li style="list-style-type:disc"><strong>무신론</strong>: 종교와 도덕의 분리, 신의 존재 부정</li></ul><ul id="22fd0150-72a4-80c0-83d9-fbd172db564d" class="bulleted-list"><li style="list-style-type:disc"><strong>자연주의</strong>: 인간도 자연의 일부라는 관점</li></ul><ul id="22fd0150-72a4-805e-a250-d7ba14ca0342" class="bulleted-list"><li style="list-style-type:disc"><strong>경험주의</strong>: 개인적 경험을 중시하는 인식론</li></ul></details></li></ul><ul id="22fd0150-72a4-805b-ab43-dd37332e583c" class="toggle"><li><details open=""><summary>2위: <strong>임마누엘 칸트 (Immanuel Kant, 1724-1804)</strong></summary><ul id="22fd0150-72a4-808e-bb68-db17682e505f" class="bulleted-list"><li style="list-style-type:disc"><strong>의무론적 윤리</strong>: 동기와 의도 중심의 도덕 판단</li></ul><ul id="22fd0150-72a4-80d3-875a-fc86b5ce6de1" class="bulleted-list"><li style="list-style-type:disc"><strong>공화정 지지</strong>: 대의민주주의 선호</li></ul><ul id="22fd0150-72a4-80e7-83d5-e658b40d42ff" class="bulleted-list"><li style="list-style-type:disc"><strong>점진적 개혁</strong>: 계몽을 통한 사회 발전</li></ul><ul id="22fd0150-72a4-80f8-ab9c-fbe367a819d6" class="bulleted-list"><li style="list-style-type:disc"><strong>차이점</strong>: 이성 중심주의 vs 감정 중심, 유신론 vs 무신론</li></ul></details></li></ul><ul id="22fd0150-72a4-802a-a524-e8feba2e3c7e" class="toggle"><li><details open=""><summary>3위: <strong>아리스토텔레스 (Aristoteles, 384-322 BC)</strong></summary><ul id="22fd0150-72a4-804d-91ff-d327779bda71" class="bulleted-list"><li style="list-style-type:disc"><strong>실용적 지혜</strong>: 점진적 개선과 중용 추구</li></ul><ul id="22fd0150-72a4-8043-8fd3-e103a1734651" class="bulleted-list"><li style="list-style-type:disc"><strong>사회적 동물</strong>: 인간의 사회적 본성 강조</li></ul><ul id="22fd0150-72a4-80de-a9f4-f1e87aff986b" class="bulleted-list"><li style="list-style-type:disc"><strong>행복주의</strong>: 일상의 즐거움과 만족 중시</li></ul><ul id="22fd0150-72a4-8030-9d31-c809857a6b8b" class="bulleted-list"><li style="list-style-type:disc"><strong>정치학</strong>: 혼합정체(현재 민주주의와 유사) 선호</li></ul><ul id="22fd0150-72a4-80cf-9952-d1a266fe4f87" class="bulleted-list"><li style="list-style-type:disc"><strong>차이점</strong>: 목적론적 세계관 vs 상대주의</li></ul></details></li></ul><ul id="22fd0150-72a4-8061-b7b4-d29eea27409f" class="toggle"><li><details open=""><summary>4위: <strong>토머스 홉스 (Thomas Hobbes, 1588-1679)</strong></summary><ul id="22fd0150-72a4-8071-be58-c2a290738593" class="bulleted-list"><li style="list-style-type:disc"><strong>인간 본성</strong>: 이기적이고 악한 본성에 대한 인식</li></ul><ul id="22fd0150-72a4-80e0-9c0a-efd407f65fc0" class="bulleted-list"><li style="list-style-type:disc"><strong>사회계약론</strong>: 안전과 질서를 위한 사회 형성</li></ul><ul id="22fd0150-72a4-80b0-952c-eb9fb391b25c" class="bulleted-list"><li style="list-style-type:disc"><strong>강한 정부</strong>: 사회 질서 유지를 위한 권력 필요성</li></ul><ul id="22fd0150-72a4-8018-96e0-ecfca5aa8954" class="bulleted-list"><li style="list-style-type:disc"><strong>차이점</strong>: 전제군주제 vs 민주주의, 유물론 vs 감정 중심</li></ul></details></li></ul><ul id="22fd0150-72a4-8047-bcb6-fc9b835c1490" class="toggle"><li><details open=""><summary>5위: <strong>에피쿠로스 (Epikouros, 341-270 BC)</strong></summary><ul id="22fd0150-72a4-800a-a5ad-c6efe9fb469a" class="bulleted-list"><li style="list-style-type:disc"><strong>쾌락주의</strong>: 일상적 즐거움과 만족 추구</li></ul><ul id="22fd0150-72a4-8007-9e45-d9e608558670" class="bulleted-list"><li style="list-style-type:disc"><strong>고통 회피</strong>: 불필요한 고통 제거의 중요성</li></ul><ul id="22fd0150-72a4-803f-9783-c430cd01645b" class="bulleted-list"><li style="list-style-type:disc"><strong>무신론</strong>: 종교와 도덕의 분리</li></ul><ul id="22fd0150-72a4-800a-af86-eeb700802baa" class="bulleted-list"><li style="list-style-type:disc"><strong>우정 중시</strong>: 인간관계의 가치 인정</li></ul><ul id="22fd0150-72a4-8081-8169-dccda895ad1c" class="bulleted-list"><li style="list-style-type:disc"><strong>차이점</strong>: 정치 참여 회피 vs 사회 참여, 개인주의 vs 사회 중심</li></ul></details></li></ul><p id="22fd0150-72a4-80a6-9d4c-d9125ae4b258" class="">현재까지 답변으로는 <strong>흄</strong>이 가장 유사하고, <strong>칸트</strong>가 두 번째로 유사해 보입니다. 특히 흄의 도덕 감정론과 회의주의가 당신의 사상과 매우 일치합니다.</p></div><div id="22fd0150-72a4-80e0-acfc-f2d3777c228c" style="width:33.33333333333333%" class="column"><p id="22fd0150-72a4-80e9-b9b4-d14f47d4aabb" class="">퍼블릭시티</p><ul id="22fd0150-72a4-80c8-bd21-fadc3073d498" class="toggle"><li><details open=""><summary><strong>1. 가장 유사한 철학자: 순자(荀子, Xunzi)</strong></summary><p id="22fd0150-72a4-80b4-8e54-e62d5a67602d" class=""><strong>순자</strong>는 전국시대 중국의 유학자로, 당신의 사상과 가장 많은 공통점을 갖고 있습니다.</p><p id="22fd0150-72a4-80f7-923f-e42732c10cff" class=""><strong>유사한 사상 요소들:</strong></p><ul id="22fd0150-72a4-80cd-9ed2-edc571e41f11" class="bulleted-list"><li style="list-style-type:disc"><strong>인간의 본성에 대한 관점</strong>: 순자는 &quot;성악설(性惡說)&quot;을 주장하며 인간의 본성이 악하다고 보았습니다. 하지만 교육과 예법을 통해 선해질 수 있다고 주장했습니다<a href="https://ijssers.org/single-view/?id=9672&amp;pid=9660">1</a><a href="https://fhssjournal.org/index.php/ojs/article/view/155">2</a>. 이는 당신의 &quot;인간은 기본적으로 악하지만 관계를 중시하고 배움을 통해 선한 선택을 할 수 있다&quot;는 관점과 일치합니다.</li></ul><ul id="22fd0150-72a4-803a-af9a-ce145d444d3b" class="bulleted-list"><li style="list-style-type:disc"><strong>교육의 중요성</strong>: 순자는 인간의 본성을 &quot;화성기위(化性起僞)&quot;라는 개념으로 설명했는데, 이는 교육을 통해 본성을 변화시킬 수 있다는 의미입니다<a href="https://fhssjournal.org/index.php/ojs/article/view/155">2</a><a href="https://ijssers.org/single-view/?id=10305&amp;pid=10282">3</a>. 당신도 교육을 통한 인간의 개선 가능성을 믿고 있습니다.</li></ul><ul id="22fd0150-72a4-8069-a82a-cbf24bfcf0a0" class="bulleted-list"><li style="list-style-type:disc"><strong>사회 질서 우선</strong>: 순자는 개인의 자유보다 사회 질서를 우선시하며, 예법과 제도를 통한 사회 통합을 중시했습니다<a href="https://ijssers.org/single-view/?id=9672&amp;pid=9660">1</a><a href="https://www.tandfonline.com/doi/full/10.1080/09552367.2020.1841951">4</a>. 이는 당신의 &quot;사회의 질서와 공동선이 우선&quot;이라는 관점과 일치합니다.</li></ul><ul id="22fd0150-72a4-80ce-a352-eb214720d748" class="bulleted-list"><li style="list-style-type:disc"><strong>점진적 개선</strong>: 순자는 급격한 변화보다 기존 제도의 점진적 개선을 선호했습니다<a href="https://www.tandfonline.com/doi/full/10.1080/09552367.2020.1841951">4</a>. 이는 당신의 &quot;전통을 보존하며 점진적 개선&quot; 관점과 일치합니다.</li></ul></details></li></ul><h2 id="22fd0150-72a4-8097-9dda-fcffc9b3e46c" class=""><strong>2. 서양 철학에서의 유사점</strong></h2><ul id="22fd0150-72a4-80af-8ad9-eb3dde0fb8af" class="toggle"><li><details open=""><summary><strong>데이비드 흄(David Hume)</strong>:</summary><ul id="22fd0150-72a4-80a4-a75c-e54e7ecde4d6" class="bulleted-list"><li style="list-style-type:disc"><strong>감정의 역할</strong>: 흄은 도덕적 판단에서 감정의 중요성을 강조했습니다. &quot;이성은 감정의 노예&quot;라는 유명한 말로 감정이 도덕적 판단의 기초가 된다고 주장했습니다<a href="https://e-journal.usd.ac.id/index.php/Retorik/article/view/7490">5</a><a href="https://manggalajournal.org/index.php/AKSIOMA/article/view/553">6</a>. 이는 당신의 &quot;감정이 도덕적 판단의 중요한 요소&quot;라는 관점과 일치합니다.</li></ul><ul id="22fd0150-72a4-8099-a0e0-efca849c5879" class="bulleted-list"><li style="list-style-type:disc"><strong>상대주의적 경향</strong>: 흄은 지식과 진리에 대해 회의적이고 상대주의적 입장을 취했습니다<a href="https://revistaseug.ugr.es/index.php/acfs/article/view/15571">7</a><a href="http://revistas.ufpr.br/doispontos/article/view/1935">8</a>. 이는 당신의 &quot;모든 지식은 시대와 문화에 따라 달라진다&quot;는 관점과 유사합니다.</li></ul></details></li></ul><ul id="22fd0150-72a4-8055-b5d7-df4e882501a5" class="toggle"><li><details open=""><summary><strong>임마누엘 칸트(Immanuel Kant)</strong>:</summary><ul id="22fd0150-72a4-8060-a42a-cea6df59d2c8" class="bulleted-list"><li style="list-style-type:disc"><strong>의도 중심 윤리</strong>: 칸트는 행위의 결과보다 동기와 의도를 중시하는 의무론적 윤리학을 주장했습니다<a href="https://manggalajournal.org/index.php/AKSIOMA/article/view/573">9</a><a href="http://cmj.sljol.info/articles/10.4038/cmj.v66i2.9476/galley/6673/download/">10</a>. 이는 당신의 &quot;동기와 의도가 선하면 도덕적&quot;이라는 관점과 일치합니다.</li></ul><ul id="22fd0150-72a4-80d5-b1f4-ceb8c1e2f6ce" class="bulleted-list"><li style="list-style-type:disc"><strong>간접민주주의</strong>: 칸트는 직접민주주의보다 대의제를 선호했습니다<a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/54EC04B2FEFEED001E87FFB5FD05075B/S1369415424000025a.pdf/div-class-title-between-faith-and-judgement-kant-s-dual-conception-of-moral-certainty-div.pdf">11</a>. 이는 당신의 &quot;간접민주주의가 이상적&quot; 관점과 일치합니다.</li></ul></details></li></ul><h2 id="22fd0150-72a4-805c-a73f-fda5d2a2c193" class=""><strong>3. 기타 유사한 철학적 요소들</strong></h2><ul id="22fd0150-72a4-806e-83de-e055ff31f309" class="toggle"><li><details open=""><summary><strong>에피쿠로스(Epicurus)</strong>:</summary><ul id="22fd0150-72a4-80f6-b7a1-d4cba71d47d3" class="bulleted-list"><li style="list-style-type:disc"><strong>쾌락주의</strong>: 에피쿠로스는 진정한 쾌락을 추구하되, 아타락시아(ataraxia, 마음의 평정)를 통한 지속적인 행복을 추구했습니다<a href="https://jpll.khu.ac.ir/article-1-4364-en.html">12</a><a href="http://ijsrm.net/index.php/ijsrm/article/view/5644">13</a>. 이는 당신의 &quot;쾌락이 가장 중요하다&quot;는 관점과 유사합니다.</li></ul></details></li></ul><ul id="22fd0150-72a4-80ca-883c-dd074169e568" class="toggle"><li><details open=""><summary><strong>프로타고라스(Protagoras)</strong>:</summary><ul id="22fd0150-72a4-801f-8a92-c6d17dd12c24" class="bulleted-list"><li style="list-style-type:disc"><strong>상대주의</strong>: 프로타고라스의 &quot;인간은 만물의 척도&quot;라는 명제는 상대주의적 진리관을 나타냅니다<a href="https://vmis.um.edu.my/index.php/JUD/article/view/43978">14</a><a href="https://brill.com/view/journals/phro/34/1-3/article-p139_10.xml">15</a>. 이는 당신의 지식과 진리에 대한 상대주의적 관점과 일치합니다.</li></ul></details></li></ul></div></div><p id="22fd0150-72a4-80bb-a5d4-f41af5a8fab4" class="">
+</p><p id="22fd0150-72a4-80a0-b612-ff0256ac7357" class="">gpt 분야별</p><h1 id="22fd0150-72a4-80ab-86e8-c7c02aa3a177" class="">당신의 사상과 유사한 철학자·사상 분야별 분류</h1><h2 id="22fd0150-72a4-806e-81c5-d946cfb5ed35" class="">인간의 본성과 교육</h2><ul id="22fd0150-72a4-8059-9150-c642ee45436e" class="bulleted-list"><li style="list-style-type:disc"><strong>순자(Xunzi, 중국)</strong>: 순자는 “인간성(性)은 악(惡)”이라고 보고, 인간 본래의 욕구는 갈등과 무질서로 이어진다고 주장했습니다. 따라서 도덕적 완성은 배움과 예(禮)를 통한 자기 수양으로 가능하다고 보았습니다. 예를 들어 순자는 자연 상태에 방치된 인간은 “야비하고 비참한(nasty and short)” 삶을 살 것이라며(홉스의 표현) 교육의 필수성을 강조했습니다. 이 관점은 인간 본성을 악하게 보고, 교육·사회 규범으로 교정해야 한다는 점에서 일종의 <strong>성악설</strong>로 분류됩니다.</li></ul><ul id="22fd0150-72a4-80cb-91fc-c0e85d6b2c9e" class="bulleted-list"><li style="list-style-type:disc"><em>(관련)</em> <strong>홉스(Thomas Hobbes, 영국)</strong>: 인간은 이기적이고 자연 상태가 “각자에 대한 투쟁”으로 귀결되므로, 이들을 제어하기 위해 강력한 사회(국가)가 필요하다고 보았습니다. 홉스는 정부가 국민의 안전을 보장하기 위한 장치라고 보았으며, 이는 질서와 안보를 위해 개인의 자유 일부를 제한할 수 있다는 당신의 생각과 맥을 같이 합니다.</li></ul><h2 id="22fd0150-72a4-801e-bdb9-f2e91a4f5d0c" class="">진리와 지식</h2><ul id="22fd0150-72a4-80b3-a835-e5579074a7b5" class="bulleted-list"><li style="list-style-type:disc"><strong>프로타고라스(Protagoras, 고대 그리스)</strong>: “인간은 만물의 척도(measure)”라는 유명한 격언에서 알 수 있듯, 모든 지식과 진리는 관찰자에 따라 상대적이라고 주장했습니다. 이는 지식의 상대주의를 대표하는 고전적 입장입니다.</li></ul><ul id="22fd0150-72a4-8052-aaf5-eb1357b98f8f" class="bulleted-list"><li style="list-style-type:disc"><strong>토마스 쿤(Thomas Kuhn, 현대 과학철학)</strong>: 과학은 정해진 ‘패러다임’ 속에서 발전하며, 서로 다른 시대의 과학 이론들은 공통의 절대적 기준으로 평가할 수 없다고 보았습니다. 그는 새로운 패러다임으로 과학이 전환될 때 기존 과학 사실이 뒤집히기도 한다고 보았는데, 이는 과학 지식조차 절대불변이 아니며 시대·문화에 따라 바뀔 수 있음을 강조합니다.</li></ul><h2 id="22fd0150-72a4-8053-8e0a-c9cb388ff172" class="">사회와 정치 (개인 vs 공동선)</h2><ul id="22fd0150-72a4-8048-a339-c94ca726ae33" class="bulleted-list"><li style="list-style-type:disc"><strong>게오르크 헤겔(Georg Hegel, 독일)</strong>: 개인의 자유와 도덕은 공동체(국가) 속에서 실현된다고 보았습니다. 헤겔에 따르면 ‘국가’는 **윤리적 삶(Sittlichkeit)**의 최고 단계로, 개인은 국가의 시민으로서 참된 자유를 누립니다. 이는 사회 질서가 유지될 때 오히려 개인도 안전하고 자유로울 수 있다는 시각으로, 사회 전체의 공익이 중요하다는 당신의 입장과 연결됩니다.</li></ul><ul id="22fd0150-72a4-80be-bc3a-c9d36048e1c3" class="bulleted-list"><li style="list-style-type:disc"><strong>토머스 홉스(Thomas Hobbes, 영국)</strong>: 자연 상태의 인간은 서로 투쟁하며 “삶은 비참하고 야만적”이기 때문에, 사회계약을 통해 주권자(리바이어던)에 권력을 집중시켜 질서를 유지해야 한다고 주장했습니다. 홉스는 정부가 <strong>공동의 안보</strong>를 보장하는 장치라고 보았습니다. 이는 집단 안전을 위해 개인 자유를 일부 제한하는 사상으로, 당신의 “사회 안전 우선” 관점과 맥이 닿습니다.</li></ul><ul id="22fd0150-72a4-80d1-830c-f5167722b049" class="bulleted-list"><li style="list-style-type:disc"><strong>에드먼드 버크(Edmund Burke, 영국)</strong>: 사회 제도와 전통의 중요성을 강조하며, 급격한 혁신 대신 점진적 개선을 주장했습니다. 버크는 검증된 전통이 사회 안정을 제공하므로, 갑작스런 개혁은 분열과 예기치 못한 부작용을 초래할 수 있다고 보았습니다. 이는 전통을 보존하며 천천히 개선해야 한다는 당신의 입장과 일치합니다.</li></ul><ul id="22fd0150-72a4-80a2-a430-db0e0f39044c" class="bulleted-list"><li style="list-style-type:disc"><strong>존 로크(John Locke, 영국)</strong>: 정부 권력은 반드시 국민의 **공공선(Public Good)**에 봉사해야 하며, 과도한 권력 행사는 정당화될 수 없다고 보았습니다. 그는 의회(입법)와 집행 권한의 분리 및 다수결 원칙을 지지했고, 사회의 자유와 권리를 보호하기 위해 권력에 제한을 둘 것을 강조했습니다. 이는 대표제 민주주의와 권력 제한을 이상으로 하는 당신의 생각과 부합합니다.</li></ul><ul id="22fd0150-72a4-8027-969f-ed6cad053dc4" class="bulleted-list"><li style="list-style-type:disc"><strong>존 롤스(John Rawls, 미국)</strong>: 재산과 경제적 불평등 문제에서 “차등의 원칙(difference principle)”을 통해 최빈층의 이익을 최우선으로 고려해야 한다고 주장했습니다. 롤스에 따르면, 경제적 불평등은 허용되지만 그 불평등이 사회 최약자에게 실질적 이익을 줄 때만 정당하므로, 부유층이 더 벌더라도 그만큼 사회의 가장 어려운 사람들에게 돌아가야 한다는 점에서 당신의 “하층민 복지 강조” 입장과 유사합니다.</li></ul><h2 id="22fd0150-72a4-805b-a697-c018c6c9e3d6" class="">행복과 도덕</h2><ul id="22fd0150-72a4-805b-ad49-f6acebf1bcab" class="bulleted-list"><li style="list-style-type:disc"><strong>에피쿠로스(Epicurus, 고대 그리스)</strong>: 쾌락주의자로서 “쾌락만이 유일한 선(善)”이며 고통은 피해야 할 유일한 악이라고 보았습니다. 즉, 좋은 삶은 불필요한 고통 없이 편안하고 즐거운 상태를 유지하는 것이라 봤습니다. 이는 “쾌락을 중시”하고 고통을 최소화하려는 당신의 입장과 상통합니다.</li></ul><ul id="22fd0150-72a4-80d1-be44-ca6d9a8e678b" class="bulleted-list"><li style="list-style-type:disc"><strong>제러미 벤담(Jeremy Bentham, 영국)</strong>: 공리주의의 창시자로, “인간은 쾌락과 고통에 의해 지배된다”고 하며 최대 다수의 최대 행복(쾌락) 원칙을 제시했습니다. 벤담은 인간의 선택과 정책은 결국 쾌락 증진과 고통 감소를 기준으로 판단해야 한다고 보아, 쾌락을 중심으로 삶을 설계하는 태도가 비슷합니다.</li></ul><ul id="22fd0150-72a4-80af-b4be-ece2b78bd9d4" class="bulleted-list"><li style="list-style-type:disc"><strong>이마누엘 칸트(Immanuel Kant, 독일)</strong>: 도덕성의 근원을 “선의지”로 보았으며, 행위의 도덕성은 결과보다는 행위자의 동기와 의도에 달려있다고 주장했습니다. 칸트는 도덕적 가치가 결과에 의존하지 않으며, 오직 “의무의식에서 우러난 선의지”만이 무조건적으로 선하다고 봤습니다. 이는 좋은 동기를 가진 행위가 도덕적으로 옳다고 본 당신의 입장과 일치합니다.</li></ul><ul id="22fd0150-72a4-801d-a000-c67f5c420efb" class="bulleted-list"><li style="list-style-type:disc"><strong>데이비드 흄(David Hume, 영국)</strong>: 감성주의 윤리학자로, 도덕 판단과 행동 동기는 이성보다 **감정(정념)**에서 나온다고 강조했습니다. 흄은 “‘이성은 감정의 노예(reed to the passions)’”이며, 순수 이성만으로는 행동을 이끌 수 없다고 했습니다. 즉, 사람은 감정에 따라 행동이 결정되므로 도덕도 감정적 반응에서 비롯된다고 봤는데, 이는 “마음이 편한 방향으로 행동하고 감정에 기반해 도덕적 판단”한다는 당신의 관점과 부합합니다.</li></ul><ul id="22fd0150-72a4-80d0-a6cb-e1575077f4aa" class="bulleted-list"><li style="list-style-type:disc"><em>(관련)</em> <strong>아리스토텔레스, 칸트, 흄</strong> 등 다양한 윤리 학파도 존재하지만, 위의 철학자들은 특히 쾌락주의적(행복), 의도중심적(동기), 감성중심적(감정) 관점을 대표합니다.</li></ul><h2 id="22fd0150-72a4-8077-8238-c65e86fce767" class="">종교와 윤리</h2><ul id="22fd0150-72a4-80a1-959f-f9c4304a2e8d" class="bulleted-list"><li style="list-style-type:disc"><strong>프리드리히 니체(Friedrich Nietzsche, 독일)</strong>: 그의 유명한 선언 “신은 죽었다(Gott ist tot)”는 기독교적 절대가치가 더 이상 유효하지 않음을 의미합니다. 니체는 기존 종교에 기반한 도덕을 비판하고, 인간이 스스로 새로운 가치를 창조해야 한다고 주장했습니다. 이는 “절대적 신념 없이 도덕적 관점이 가능하다”는 당신의 생각과 상통합니다.</li></ul><ul id="22fd0150-72a4-805c-873a-c8b624bf7063" class="bulleted-list"><li style="list-style-type:disc"><strong>세속 윤리·인본주의(philosophy of secular morality)</strong>: 많은 현대 사상가들은 종교 없이도 도덕이 가능하다고 봅니다. 예를 들어 기독교 윤리학 사전은 “종교와 도덕은 별개”로 정의된다고 밝히며, 리처드 도킨스·샘 해리스 등도 종교 없는 도덕의 중요성을 강조했습니다. 종교가 공동체적 이익을 위해 등장했다 하더라도, 도덕의 근거 자체는 합리적·이성적 토대나 인간의 보편적 공감능력에서 찾을 수 있다는 점에서 당신의 입장과 일치합니다.</li></ul><h2 id="22fd0150-72a4-80d2-8f75-d0a8c0d51bf7" class="">자연과 역사</h2><ul id="22fd0150-72a4-80cb-b274-cb11d5b3325f" class="bulleted-list"><li style="list-style-type:disc"><strong>바뤼흐 스피노자(Baruch Spinoza, 네덜란드)</strong>: 그는 신을 곧 **자연(Natura)**이라고 보았고, 우주의 유일한 실체에 만물이 포함된다고 주장했습니다. 스피노자의 표현을 빌리면 “존재하는 것은 모두 신 안에 있으며, 신 없이는 어떤 것도 존재하거나 생각될 수 없다”고 보았습니다. 즉 인간도 자연의 일부이므로 자연과 조화를 이루며 살아가야 한다는 사상과 맞닿아 있습니다.</li></ul><ul id="22fd0150-72a4-8063-8f11-c8eafbea11f4" class="bulleted-list"><li style="list-style-type:disc"><strong>게오르크 헤겔(Georg Hegel, 독일)</strong>: 역사는 이성의 발전이자 자유의 의식이 확대되는 과정이라고 봤습니다. 헤겔은 세계사가 “이성이 세상을 지배한다”고 하며, 역사를 <strong>합리적 진보</strong> 과정으로 이해했습니다. 물론 역사가 단순한 일직선적 발전만은 아니지만, 전반적으로 인류 문화와 제도가 자유의식 쪽으로 발전한다고 봤습니다. 이는 사회가 점진적으로 개선된다는 당신의 생각과 유사합니다.</li></ul><h2 id="22fd0150-72a4-8033-9262-e030d2b49951" class="">자아와 정체성</h2><ul id="22fd0150-72a4-8070-b5fa-d9c93fcb25b5" class="bulleted-list"><li style="list-style-type:disc"><strong>조지 허버트 미드(George H. Mead, 미국)</strong>: 자아(self)는 타인과의 사회적 상호작용 속에서 형성된다고 주장한 사회학자·철학자입니다. 미드는 “정신은 본질적으로 사회적 현상”이라며, 언어와 상징을 매개로 타인의 반응을 내면화하면서 자아가 발전한다고 설명합니다. 즉, 개인은 경험과 기억을 통해 형성되지만 이 모든 것은 사회적 맥락 속에서 이뤄진다는 점에서 “사회적 관계와 개인 경험이 ‘나’를 규정한다”는 당신의 견해와 일치합니다.</li></ul><p id="22fd0150-72a4-80c0-ac63-d138eb7ecb93" class="">각 분야별로 살펴본 바와 같이, 당신의 기본 입장은 유교(순자), 계몽주의(홉스, 로크, 칸트), 보수주의(버크), 공리주의(에피쿠로스, 벤담), 근대 사회계약론, 현대 정치철학(로울스), 감성주의(흄), 그리고 현대 세속 윤리·역사철학 등 다양한 사상과 유사한 점이 있습니다. 이러한 철학자들과 사상은 제각기 시대·문화가 다르지만, 공통적으로 당신이 제시한 가치관과 비슷한 관점을 제시하고 있습니다.</p><p id="22fd0150-72a4-8005-b8b3-f0bf1317a30f" class=""><strong>출처:</strong> 위 사상가들의 주장과 개념은 각 분야의 저명한 철학 자료에서 확인할 수 있습니다.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
